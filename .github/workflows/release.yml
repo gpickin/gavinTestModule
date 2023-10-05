@@ -75,7 +75,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: github.ref != 'refs/heads/development'
         run: |
-          box config set modules.commandbox-semantic-release.targetBranch=${github.ref}
+          box config set modules.commandbox-semantic-release.targetBranch=${{github.ref}}
           box semantic-release
 
       - name: Run Semantic Release for Development
@@ -84,7 +84,7 @@ jobs:
         if: github.ref == 'refs/heads/development'
         run: |
           box config set modules.commandbox-semantic-release.targetBranch=development
-          box semantic-release targetBranch=development prereleaseid=snapshot buildid=${github.run_number}
+          box semantic-release targetBranch=development prereleaseid=snapshot buildid=${{github.run_number}}
 
       # - name: Generate API Docs
       #   run: |
