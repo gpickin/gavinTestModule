@@ -7,6 +7,10 @@
     },
     "slug":"gavin-test-module",
     "type":"modules",
+    "repository":{
+        "type":"git",
+        "url":"https://github.com/gpickin/gavinTestModule"
+    },
     "ignore":[
         ".git",
         ".gitignore",
